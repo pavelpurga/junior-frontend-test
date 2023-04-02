@@ -3,14 +3,30 @@ import { useCallback, useEffect, useReducer } from 'react'
 const initialState = {
   filter: {
     isNew: false,
+    isLimited: false,
     category: [],
   },
+  searchNew: ' ',
   status: 'idle', // idle | work | success | error
   items: [],
 }
 const reducer = (state, action) => {
   console.log(`Action: ${action.type}; Payload:`, action.payload)
   switch (action.type) {
+    case 'search:change': {
+      return {
+        ...state,
+        status: 'work',
+        searchNew: action.payload,
+      }
+    }
+    case 'search:reset': {
+      return {
+        ...state,
+        status: 'work',
+        searchNew: '',
+      }
+    }
     case 'filter:change': {
       return {
         ...state,
@@ -53,15 +69,16 @@ const reducer = (state, action) => {
 }
 export const useProductList = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const updateSearch = useCallback((visible = '') => dispatch({ type: 'search:change', payload: visible }), [])
   const updateFilter = useCallback((filter = {}) => dispatch({ type: 'filter:change', payload: filter }), [])
   const resetFilter = useCallback(() => dispatch({ type: 'filter:reset' }), [])
   const performRequest = useCallback(() => {
     dispatch({ type: 'request:start' })
     // prettier-ignore
     const serializeFilter = filter => [
-      ...filter.category.map(categoryId => `category[]=${categoryId}`),
-      `isNew=${filter.isNew}`,
-    ].join('&')
+      ...filter.category?.map(categoryId => `category[]=${categoryId}`),
+      `isNew=${filter.isNew}`, `isLimited=${filter.isLimited}`, `search=${state.searchNew}`
+    ].join('&');
 
     fetch(`/api/product?${serializeFilter(state.filter)}`)
       .then(res => {
@@ -75,7 +92,7 @@ export const useProductList = () => {
         console.error(err)
         dispatch({ type: 'request:error' })
       })
-  }, [state.filter])
+  }, [state.filter, state.searchNew])
 
   useEffect(() => {
     performRequest()
@@ -85,5 +102,6 @@ export const useProductList = () => {
     ...state,
     updateFilter,
     resetFilter,
+    updateSearch,
   }
 }
