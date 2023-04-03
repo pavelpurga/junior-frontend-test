@@ -1,0 +1,116 @@
+.card{
+    min-width: 448px;
+    min-height: 145px;
+    background: #FFFFFF;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    display: flex;
+    gap: 0 16px;
+    position: relative;
+}
+.card_image{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 100%;
+    border-radius: 16px;
+    width: 116px;
+    height: auto;
+}
+.card_image_barley {
+    background-image: url(../../images/Barley.png);
+}
+
+.card_image_canola {
+    background-image: url(../../images/Canola.png);
+}
+
+.card_image_corn {
+    background-image: url(../../images/Corn.png);
+}
+
+.card_image_oats {
+    background-image: url(../../images/Oats.png);
+}
+
+.card_image_soybeans {
+    background-image: url(../../images/Soybeans.png);
+}
+
+.card_image_wheat {
+    background-image: url(../../images/Wheat.png);
+}
+.card_text{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.96);
+    margin: 0 0 4px 0;
+}
+
+.card_description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.96);
+    margin: 0 0 4px 0;
+    max-width: 300px;
+    height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card_category{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #A8B8CA;
+    margin: 12px 0 4px 0;
+}
+.card_price_box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 8px;
+    margin: 0 0 12px 0;
+}
+.card_price{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.96);
+    margin: 0;
+}
+.card_discount{
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #FF9900;
+    margin: 0;
+}
+.card_cell_box{
+    display: flex;
+    gap: 0 8px;
+    position: absolute;
+    z-index: 10;
+    top: 8px;
+    right: 12px;
+}
+.card_cell{
+    border-radius: 12px;
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0px 10px;
+    margin: 0;
+}
+.card_cell_limited {
+    color: #889BB1;
+    background-color: #E7EEF9;
+}
+
+.card_cell_new {
+    color: #20B02E;
+    background-color: #E6F5E6;
+}

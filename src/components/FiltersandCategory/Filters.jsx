@@ -24,16 +24,16 @@ const Filters = ({ filter, updateFilter, resetFilter }) => {
           <h2 className="filters_title_text">Filters</h2>
         </div>
         <div className="filters_unit">
-          <div className="filters_unit_category">
-            <h2 className="filters_unit_category_text">Category</h2>
-            <div className="filters_unit_category_category">
+          <div className="filters_category category">
+            <h2 className="category_text">Category</h2>
+            <div className="category_category">
               <button
                 className={`category_button ${selectedCategory === 'All' ? 'category_button_active' : ''} `}
                 onClick={handleCategoryAll}
               >
                 All
               </button>
-              {categories.map(category => (
+              {categories?.map(category => (
                 <button
                   key={category.id}
                   className={`category_button ${selectedCategory === category.id ? 'category_button_active' : ''}`}
@@ -44,25 +44,29 @@ const Filters = ({ filter, updateFilter, resetFilter }) => {
               ))}
             </div>
           </div>
-          <div className="filters_unit_status">
-            <h2 className="filters_unit_status_text">Status</h2>
-            <div className="filters_unit_status_unit">
-              <input
-                className="status_checkbox"
-                id="is_limited"
-                type="checkbox"
-                onChange={handleFilterIsLimitedUpdater}
-                checked={filter.isLimited}
-              />
-              <label htmlFor="is_limited">Limited</label>
-              <input
-                className="status_checkbox"
-                id="is_new"
-                type="checkbox"
-                onChange={handleFilterIsNewUpdater}
-                checked={filter.isNew}
-              />
-              <label htmlFor="is_new">New</label>
+          <div className="filters_status status">
+            <h2 className="status_text">Status</h2>
+            <div className="status_unit">
+              <div>
+                <input
+                  className="status_checkbox"
+                  id="is_limited"
+                  type="checkbox"
+                  onChange={handleFilterIsLimitedUpdater}
+                  checked={filter.isLimited}
+                />
+                <label htmlFor="is_limited">Limited</label>
+              </div>
+              <div>
+                <input
+                  className="status_checkbox"
+                  id="is_new"
+                  type="checkbox"
+                  onChange={handleFilterIsNewUpdater}
+                  checked={filter.isNew}
+                />
+                <label htmlFor="is_new">New</label>
+              </div>
             </div>
           </div>
         </div>

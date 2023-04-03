@@ -43,3 +43,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.header_search_input::placeholder {
+    color: #A8B8CA;
+}

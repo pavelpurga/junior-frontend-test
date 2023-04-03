@@ -43,13 +43,13 @@
     gap: 0  24px;
 }
 
-.filters_unit_status_unit{
+.status_unit{
     display: flex;
     align-items: center;
     gap: 0 14px;
 }
 
-.filters_unit_status_text{
+.status_text{
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
@@ -58,7 +58,7 @@
     margin: 0 0 20px 0;
 }
 
-.filters_unit_category_text{
+.category_text{
     font-size: 14px;
     line-height: 20px;
     font-weight: 600;
@@ -67,7 +67,7 @@
     margin: 0 0 16px 0;
 }
 
-.filters_unit_category_category{
+.category_category{
     display: flex;
     align-items: center;
     gap: 0 12px;
@@ -101,6 +101,16 @@
 }
 
 .status_checkbox+label {
+    min-width: 80px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.status_checkbox+label::before {
     min-width: 80px;
     display: inline-flex;
     align-items: center;
