@@ -1,0 +1,115 @@
+.filters{
+    max-width: 1440px;
+    min-width: 320px;
+    margin: auto;
+    padding: 40px 24px;
+}
+
+.filters_box{
+    width: 920px;
+    min-height: 152px;
+    background: #FFFFFF;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    padding: 24px 20px 22px;
+}
+
+.filters_title{
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    margin: 0 0 18px 0;
+}
+
+.filters_title_image{
+    width: 20px;
+    height: 20px;
+    background-image: url(../../images/filters.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.filters_title_text{
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #037BFF;
+    margin: 0;
+}
+
+.filters_unit{
+    display: flex;
+    align-items: center;
+    gap: 0  24px;
+}
+
+.filters_unit_status_unit{
+    display: flex;
+    align-items: center;
+    gap: 0 14px;
+}
+
+.filters_unit_status_text{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #A8B8CA;
+    margin: 0 0 20px 0;
+}
+
+.filters_unit_category_text{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #A8B8CA;
+    margin: 0 0 16px 0;
+}
+
+.filters_unit_category_category{
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    flex-wrap: wrap;
+}
+
+.category_button{
+    border: 1px solid #037BFF;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 3px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #037BFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category_button_active{
+    color: #FFFFFF;
+    background: #037BFF;
+}
+
+.status_checkbox{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.status_checkbox+label {
+    min-width: 80px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+.status_checkbox:checked+label::before {
+    background-image: url(../../images/Check.svg);
+    background-size: 13px 10px;
+}
