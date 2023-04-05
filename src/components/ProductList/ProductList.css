@@ -12,3 +12,22 @@
     grid-template-columns: repeat(auto-fill, minmax(448px, 1fr));
     gap: 24px;
 }
+
+@media screen and(max-width: 520px){
+    .cards_list{
+        grid-template-columns:1fr;
+    }
+}
+@media screen and(max-width: 420px){
+    .cards{
+        padding: 10px 10px 44px;
+    }
+    @media screen and(max-width: 360px){
+        .cards{
+            display: flex;
+
+            max-width: 360px;
+        }
+    }
+
+}

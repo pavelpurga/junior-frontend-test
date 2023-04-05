@@ -126,3 +126,31 @@
     background-image: url(../../images/Check.svg);
     background-size: 13px 10px;
 }
+
+    @media screen and (max-width: 360px) {
+        .filters {
+            display: flex;
+            padding: 50px 10px;
+        }
+        .category_category{
+            gap: 5px 0;
+        }
+        .filters_status{
+            padding-bottom: 190px;
+        }
+    }
+        @media screen and(max-width: 768px){
+            .filters_unit{
+                flex-direction: column;
+                gap: 24px 0;
+            }
+        }
+    @media screen and(max-width: 1024px){
+    .filters_box{
+        width: 100%;
+    }
+    .category_category{
+        gap: 12px;
+    }
+    }
+

@@ -114,3 +114,25 @@
     color: #20B02E;
     background-color: #E6F5E6;
 }
+
+@media screen and(max-width: 520px){
+    .card{
+        min-width: 280px;
+    }
+    .card_description{
+        max-width: 220px;
+        font-size: 12px;
+        line-height: 15px;
+        height: 30px;
+    }
+    .card_discount{
+        font-size: 10px;
+        line-height: 12px;
+    }
+}
+@media screen and(max-width: 360px){
+        card{
+            max-width: 360px;
+            min-width: 360px;
+        }
+    }
