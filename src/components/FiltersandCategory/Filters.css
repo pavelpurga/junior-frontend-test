@@ -1,4 +1,4 @@
-.filters{
+    .filters{
     max-width: 1440px;
     min-width: 320px;
     margin: auto;
@@ -111,13 +111,16 @@
 }
 
 .status_checkbox+label::before {
-    min-width: 80px;
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
 }
 .status_checkbox:checked+label::before {
     background-image: url(../../images/Check.svg);
