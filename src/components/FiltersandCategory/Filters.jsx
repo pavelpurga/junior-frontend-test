@@ -11,6 +11,9 @@ const Filters = ({ filter, updateFilter, resetFilter }) => {
       .catch(err => {
         console.log(err)
       })
+    return () => {
+      setCategories([])
+    }
   }, [])
   const handleFilterIsNewUpdater = () => updateFilter({ isNew: !filter.isNew })
   const handleFilterIsLimitedUpdater = () => updateFilter({ isLimited: !filter.isLimited })
@@ -33,7 +36,7 @@ const Filters = ({ filter, updateFilter, resetFilter }) => {
               >
                 All
               </button>
-              {categories?.map(category => (
+              {categories.map(category => (
                 <button
                   key={category.id}
                   className={`category_button ${selectedCategory === category.id ? 'category_button_active' : ''}`}

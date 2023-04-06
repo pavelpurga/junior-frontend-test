@@ -23,11 +23,12 @@
         padding: 10px 10px 44px;
     }
     @media screen and(max-width: 360px){
-        .cards{
+        .cards_list{
             display: flex;
-
-            max-width: 360px;
+            flex-direction: column;
+            flex-wrap: wrap;
         }
     }
+
 
 }

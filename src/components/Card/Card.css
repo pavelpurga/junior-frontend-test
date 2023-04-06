@@ -131,8 +131,8 @@
     }
 }
 @media screen and(max-width: 360px){
-        card{
-            max-width: 360px;
-            min-width: 360px;
+        .card{
+            min-width: 280px;
+            padding-left: 30px;
         }
     }
